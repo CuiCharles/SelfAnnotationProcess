@@ -3,6 +3,17 @@ plugins {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_1_7
-    targetCompatibility = JavaVersion.VERSION_1_7
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+dependencies {
+
+    //用于生成Java代码
+    implementation 'com.squareup:javapoet:1.13.0'
+    implementation project(':annotation')
+
+    //用于简化配置Processor，非必需，它本身也是google开发的一个注解处理器，代码比较简单，可以查看源码
+    annotationProcessor 'com.google.auto.service:auto-service:1.0'
+    implementation 'com.google.auto.service:auto-service-annotations:1.0'
 }
